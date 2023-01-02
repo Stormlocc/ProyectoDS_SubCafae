@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentLayoutController">
+   <left>
+      <VBox fx:id="leftHome" prefHeight="400.0" prefWidth="50.0" style="-fx-background-color: #E77918;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="bHome" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#ebHome" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="10.0" top="120.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../imagenes/home.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="bHistorial" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="110.0" onMouseClicked="#ebHistorial" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/historial.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fx:id="bReporte" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="160.0" onMouseClicked="#ebReporte" opacity="0.74" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/reporte.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+         </children></VBox>
+   </left>
+   <center>
+      <Pane fx:id="mainHome" prefHeight="375.0" prefWidth="550.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <Pane fx:id="headerHome" minWidth="-Infinity" prefHeight="26.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="bConfiguracion" fitHeight="16.0" fitWidth="16.0" layoutX="522.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/configuracion.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="bOpciones" fitHeight="16.0" fitWidth="16.0" layoutX="553.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/usuario.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="30.0" layoutY="6.0" text="Sub Cafae Cusco al servicio de todos los maestro">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="50.0" layoutY="40.0" text="Bienvenido estimado usuario" textFill="#eb6f16">
+         <font>
+            <Font name="System Italic" size="21.0" />
+         </font>
+      </Label>
+      <Pane layoutX="310.0" layoutY="112.0" opacity="0.8" prefHeight="218.0" prefWidth="160.0" style="-fx-background-color: #E77918; -fx-border-radius: 10;">
+         <children>
+            <Text fill="WHITE" layoutX="1.0" layoutY="15.0" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" x="50.0" y="50.0">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </Text>
+            <Text fill="WHITE" layoutX="4.0" layoutY="14.0" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido" x="50.0" y="80.0">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </Text>
+            <Text fill="WHITE" layoutX="15.0" layoutY="24.0" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" x="50.0" y="100.0">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </Text>
+            <Text fill="WHITE" layoutX="-38.0" layoutY="49.0" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de nacimiento" x="50.0" y="100.0">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </Text>
+            <Text fill="WHITE" layoutX="4.0" layoutY="-13.0" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado" x="50.0" y="50.0">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </Text>
+            <Text fill="WHITE" layoutX="6.0" layoutY="126.0" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="Genero" x="50.0" y="50.0">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="218.0" fitWidth="160.0" layoutX="80.0" layoutY="114.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/lopez.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
