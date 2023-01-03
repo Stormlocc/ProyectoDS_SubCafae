@@ -2,6 +2,12 @@
 /shelf/
 /workspace.xml
 
+#Yo creo que
+.idea
+out
+test
+ProyectoDS_SubCafae.iml
+
 #Encontrado en https://github.com/github/gitignore/blob/main/Java.gitignore
 
 # Compiled class file
