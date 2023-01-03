@@ -14,7 +14,7 @@ public class SubCafae extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("vista/FXMLDocumentLayout.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("vista/FXMLLogin.fxml"));
         
         Scene scene = new Scene(root);
         
