@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="377.0" style="-fx-background-color: #888888;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentAgregarController">
+   <children>
+      <Text fill="WHITE" layoutX="68.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo de prestamo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="inputDocPrestamo" layoutX="68.0" layoutY="142.0" prefHeight="29.0" prefWidth="253.0" />
+      <Label layoutX="39.0" layoutY="38.0" prefHeight="64.0" prefWidth="299.0" text="Complete el formulario para concluir el pago" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="68.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Importe">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="inputImporte" layoutX="68.0" layoutY="202.0" prefHeight="29.0" prefWidth="253.0" />
+      <Text fill="WHITE" layoutX="68.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="inputFecha" layoutX="68.0" layoutY="267.0" prefHeight="29.0" prefWidth="253.0" />
+      <Button fx:id="bPagar" layoutX="68.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#ebPagar" prefHeight="44.0" prefWidth="253.0" text="PAGAR" />
+      <TextField fx:id="inputDocCancelacion" layoutX="68.0" layoutY="102.0" prefHeight="16.0" prefWidth="83.0" />
+      <Label fx:id="labelConfirmar" layoutX="195.0" layoutY="388.0" prefHeight="29.0" prefWidth="128.0" textFill="WHITE" wrapText="true" />
+   </children>
+</AnchorPane>

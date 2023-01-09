@@ -66,6 +66,11 @@ public class FXMLDocumentLayoutController implements Initializable {
         CargarPagina("vista/FXMLDocumentReporte");
     }
     
+    @FXML
+    private void ebOpciones(MouseEvent event) {
+        CargarPagina("vista/FXMLDocumentAgregar");
+    }
+    
     /*Modulo para cargar paginas*/
     private void CargarPagina(String p){
         Parent root = null;
