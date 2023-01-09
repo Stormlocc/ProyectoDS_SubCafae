@@ -67,6 +67,7 @@ public class FXMLDocumentAgregarController implements Initializable {
             inputFecha.setText("");
             //Mostrar confirmacion
             labelConfirmar.setText("Pago Exitoso");
+            pst.close();
         }
         catch(Exception e){
             System.out.println(e);

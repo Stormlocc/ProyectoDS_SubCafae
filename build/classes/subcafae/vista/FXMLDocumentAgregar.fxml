@@ -33,5 +33,7 @@
       </Text>
       <TextField fx:id="inputFecha" layoutX="68.0" layoutY="267.0" prefHeight="29.0" prefWidth="253.0" />
       <Button fx:id="bPagar" layoutX="68.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#ebPagar" prefHeight="44.0" prefWidth="253.0" text="PAGAR" />
+      <TextField fx:id="inputDocCancelacion" layoutX="68.0" layoutY="102.0" prefHeight="16.0" prefWidth="83.0" />
+      <Label fx:id="labelConfirmar" layoutX="195.0" layoutY="388.0" prefHeight="29.0" prefWidth="128.0" textFill="WHITE" wrapText="true" />
    </children>
 </AnchorPane>
