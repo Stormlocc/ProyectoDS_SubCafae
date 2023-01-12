@@ -50,6 +50,7 @@ public class FXMLLoginController implements Initializable {
     @FXML
     private void ebIniciarSesion(ActionEvent event) throws IOException {
         System.out.println("Ingreso a Home");
+        //Guardar todos los datos, y verificar si existe el usuario
         CargarPagina("vista/FXMLDocumentLayout");
 
     }

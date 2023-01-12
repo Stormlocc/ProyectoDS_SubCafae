@@ -5,15 +5,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import jdk.nashorn.internal.runtime.regexp.joni.exception.SyntaxException;
 
 /**
  * FXML Controller class
@@ -40,7 +44,10 @@ public class FXMLDocumentLayoutController implements Initializable {
     private ImageView bReporte;
     @FXML
     private Pane mainHome;
+    @FXML
+    private ChoiceBox<String> chbOpciones;
 
+    private String[] opciones = {"Agregar prestamo","Agregar pago","Salir"};
     /**
      * Initializes the controller class.
      */
@@ -48,9 +55,28 @@ public class FXMLDocumentLayoutController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         CargarPagina("vista/FXMLDocumentHome");
+        // Cargar el boton de opciones
+        chbOpciones.getItems().addAll(opciones);
+        chbOpciones.setOnAction(this::echbOpciones);
         // Tambien cargar datos necesario en modo public
-    }    
-    
+    }
+
+    private void echbOpciones(ActionEvent actionEvent) {
+        //Choise box para mostrar opciones como: salir, agregar pago, prestamo,
+        String inputOpcion = chbOpciones.getValue();
+        System.out.println(inputOpcion);
+        if (inputOpcion == "Agregar prestamo"){
+            System.out.println("Ingreso a Agregar prestamo");
+        }
+        if(inputOpcion == "Agregar pago" ){
+            System.out.println("Ingreso a Agregar pagoo");
+        }
+        if(inputOpcion == "Salir" ){
+            System.out.println("salio del programa");
+            CargarPagina("vista/FXMLDocumentAgregar");
+        }
+    }
+
     @FXML
     private void ebHome(MouseEvent event) {
         CargarPagina("vista/FXMLDocumentHome");
@@ -65,11 +91,7 @@ public class FXMLDocumentLayoutController implements Initializable {
     private void ebReporte(MouseEvent event) {
         CargarPagina("vista/FXMLDocumentReporte");
     }
-    
-    @FXML
-    private void ebOpciones(MouseEvent event) {
-        CargarPagina("vista/FXMLDocumentAgregar");
-    }
+
     
     /*Modulo para cargar paginas*/
     private void CargarPagina(String p){
