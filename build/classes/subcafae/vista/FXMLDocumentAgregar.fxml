@@ -1,39 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="410.0" style="-fx-background-color: #e67818;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentAgregarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="360.0" style="-fx-background-color: #ff941b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentAgregarController">
    <children>
-      <Text fill="WHITE" layoutX="67.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo de prestamo">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Label layoutX="56.0" layoutY="14.0" prefHeight="64.0" prefWidth="299.0" text="Complete el formulario para concluir el pago" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <VBox alignment="BASELINE_LEFT" layoutX="55.0" layoutY="83.0" pickOnBounds="false" prefHeight="232.0" prefWidth="250.0" scaleShape="false" spacing="12.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Importe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </Text>
+            <TextField fx:id="inputImporte" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="500">
+               <opaqueInsets>
+                  <Insets bottom="50.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="-18.0" />
+               </VBox.margin>
+            </TextField>
+            <Text fill="WHITE" smooth="false" strokeType="INSIDE" strokeWidth="0.0" text="Meses de prestamo" wrappingWidth="129.818359375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="inputMeses" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="12">
+               <opaqueInsets>
+                  <Insets bottom="50.0" top="10.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="-18.0" />
+               </VBox.margin>
+            </TextField>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Yo autizo el prestamo">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="mostrarUsuario" accessibleRole="TEXT" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" pickOnBounds="false" prefHeight="30.0" prefWidth="242.0" promptText="usuario">
+               <VBox.margin>
+                  <Insets top="-18.0" />
+               </VBox.margin>
+            </TextField>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Prestatario">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="mostrarPrestatario" accessibleRole="TEXT" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" pickOnBounds="false" prefHeight="30.0" prefWidth="250.0" promptText="usuario">
+               <VBox.margin>
+                  <Insets top="-18.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Label layoutX="25.0" layoutY="8.0" prefHeight="64.0" prefWidth="299.0" text="Complete el formulario para concluir el prestamo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Text fill="WHITE" layoutX="68.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Importe">
+      <Label fx:id="labelConfirmar" alignment="CENTER_RIGHT" layoutX="264.0" layoutY="382.0" prefHeight="29.0" prefWidth="88.0" text="Fecha hoy" textFill="WHITE" wrapText="true" />
+      <Button fx:id="bPagar" layoutX="55.0" layoutY="340.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#ebPagar" prefHeight="40.0" prefWidth="250.0" text="OBTENER PRESTAMO" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
-      </Text>
-      <TextField fx:id="inputImporte" layoutX="75.0" layoutY="202.0" prefHeight="29.0" prefWidth="270.0" />
-      <Text fill="WHITE" layoutX="68.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sucursal">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Button fx:id="bPagar" layoutX="75.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#ebPagar" prefHeight="44.0" prefWidth="270.0" text="PAGAR" />
-      <Label fx:id="labelConfirmar" layoutX="195.0" layoutY="388.0" prefHeight="29.0" prefWidth="128.0" textFill="WHITE" wrapText="true" />
-      <ComboBox fx:id="inputDocPrestamo" layoutX="74.0" layoutY="139.0" prefHeight="29.0" prefWidth="270.0" />
-      <ComboBox fx:id="inputSucursal" layoutX="75.0" layoutY="268.0" prefHeight="29.0" prefWidth="270.0" />
+      </Button>
    </children>
 </AnchorPane>

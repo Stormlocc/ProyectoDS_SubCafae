@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package subcafae;
 
 import java.net.URL;
@@ -19,6 +15,7 @@ import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -28,42 +25,45 @@ import javafx.scene.input.MouseEvent;
 public class FXMLDocumentAgregarController implements Initializable {
 
     @FXML
-    private ComboBox<?> inputDocPrestamo;
-    @FXML
     private TextField inputImporte;
     @FXML
     private Button bPagar;
     @FXML
     private Label labelConfirmar;
     @FXML
-    private ComboBox<?> inputSucursal;
+    private TextField inputMeses;
+    @FXML
+    private TextField mostrarUsuario;
+    @FXML
+    private TextField mostrarPrestatario;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //Bloquear edicion de usuario y prestatario
         // TODO
     }    
 
     @FXML
     private void ebPagar(MouseEvent event) {
         System.out.println("Click en boton pagar");
-        /*
         try{
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/SubCafae","root","");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ds_subcafae","root","");
             //Agregar consulta de pagos, para generar nueva llave primaria
             //String pk = ;
             //Permite agregar codigo sql, (inyectar codigo)
-            PreparedStatement pst = conexion.prepareStatement("INSERT INTO AMORTIZACION VALUES (?,?,?,?)");
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO SUCURSAL VALUES (?,?)");
             //Autoincremente
-            pst.setString(1, inputDocCancelacion.getText().trim());
+            //pst.setString(1, inputDocCancelacion.getText().trim());
+            pst.setString(1, null);
             //Detectar que prestamo pagara, (dar aviso si el prestamo ya esta pagado
-            pst.setString(2, inputDocPrestamo.getText().trim());
+            pst.setString(2, inputImporte.getText().trim());
             //
-            pst.setString(3, inputImporte.getText().trim());
+            //pst.setString(3, inputImporte.getText().trim());
             //Conseguir fecha del sitema
-            pst.setString(4, inputFecha.getText().trim());
+            //pst.setString(4, inputFecha.getText().trim());
             //Ejecutar codigo
             pst.executeUpdate();
             System.out.println("Pago realizado");
@@ -77,8 +77,7 @@ public class FXMLDocumentAgregarController implements Initializable {
         }
         catch(Exception e){
             System.out.println(e);
-        }
-        */
+        }   
     }
     
 }
