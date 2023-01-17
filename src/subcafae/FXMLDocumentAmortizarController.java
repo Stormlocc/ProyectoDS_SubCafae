@@ -6,6 +6,9 @@ package subcafae;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -27,13 +30,17 @@ public class FXMLDocumentAmortizarController implements Initializable {
     @FXML
     private Text inputMeses;
     @FXML
-    private ComboBox<?> bcbxSucursal;
+    private ComboBox<String> bcbxSucursal;
     @FXML
     private ComboBox<?> bcbxPrestamo;
     @FXML
     private Label labelConfirmar;
     @FXML
     private Button bPagar;
+    //Coleccion para el combo box
+    private ObservableList<String> listaSucursal;
+    private ObservableList<String> listaPrestamo;
+
 
     /**
      * Initializes the controller class.
@@ -41,6 +48,8 @@ public class FXMLDocumentAmortizarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        listaSucursal = FXCollections.observableArrayList("üno","caramelo", "hermano?","caramelo", "hermano?","caramelo", "hermano?");
+        bcbxSucursal.setItems(listaSucursal);
     }    
 
     @FXML
