@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import jdk.nashorn.internal.runtime.regexp.joni.exception.SyntaxException;
+
 
 /**
  * FXML Controller class
@@ -53,12 +53,12 @@ public class FXMLDocumentLayoutController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("Estas en Layout");
         // TODO
         CargarPagina("vista/FXMLDocumentHome");
         // Cargar el boton de opciones
         chbOpciones.getItems().addAll(opciones);
         chbOpciones.setOnAction(this::echbOpciones);
-        // Tambien cargar datos necesario en modo public
     }
 
     private void echbOpciones(ActionEvent actionEvent) {

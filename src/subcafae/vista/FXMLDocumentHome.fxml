@@ -1,73 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentHomeController">
    <children>
       <Label layoutX="80.0" layoutY="64.0" text="Bienvenido estimado usuario" textFill="#eb6f16">
          <font>
-            <Font name="System Italic" size="21.0" />
+            <Font name="System Italic" size="30.0" />
          </font>
       </Label>
-      <Pane layoutX="576.0" layoutY="171.0" opacity="0.8" prefHeight="265.0" prefWidth="227.0" style="-fx-background-color: #E77918; -fx-border-radius: 10;">
+      <Pane layoutX="434.0" layoutY="144.0" opacity="0.8" prefHeight="317.0" prefWidth="399.0" style="-fx-background-color: #E77918; -fx-border-radius: 10;">
          <children>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="17.0" layoutY="25.0" smooth="false" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Nombre" x="10.0" y="50.0">
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Text>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="17.0" layoutY="31.0" smooth="false" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Apellido" x="10.0" y="80.0">
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Text>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="17.0" layoutY="46.0" smooth="false" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="DNI" x="10.0" y="100.0">
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Text>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="17.0" layoutY="87.0" smooth="false" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Fecha de nacimiento" x="10.0" y="100.0">
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Text>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="20.0" layoutY="-15.0" smooth="false" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado" wrappingWidth="107.10009765625" x="10.0" y="50.0">
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Text>
-            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="19.0" layoutY="173.0" smooth="false" stroke="#0ae827" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Genero" x="10.0" y="50.0">
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Text>
+            <SplitPane cacheShape="false" centerShape="false" depthTest="DISABLE" dividerPositions="0.4109" focusTraversable="false" layoutY="-4.0" prefHeight="328.0" prefWidth="389.0" style="-fx-background-color: transparent;">
+              <items>
+                <AnchorPane prefHeight="255.0" prefWidth="171.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" layoutX="-19.0" layoutY="-13.0" prefHeight="326.0" prefWidth="140.0" spacing="18.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="Nombre" textFill="WHITE">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Apellidos" textFill="WHITE">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label text="DNI" textFill="WHITE">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Sexo" textFill="WHITE">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Estado civil" textFill="WHITE">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </AnchorPane>
+                <AnchorPane prefHeight="326.0" prefWidth="224.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" layoutX="-57.0" prefHeight="317.0" prefWidth="208.0" spacing="18.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label fx:id="mostrarNombre" text="Nombre" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Italic" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="mostrarApellido" text="Apellidos" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Italic" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="mostrarDNI" text="DNI" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Italic" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="mostrarSexo" text="Sexo" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Italic" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="mostrarEstadoCivil" text="Estado civil" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Italic" size="21.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="120.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
          </children>
       </Pane>
-      <ImageView fitHeight="265.0" fitWidth="223.0" layoutX="193.0" layoutY="171.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="317.0" fitWidth="231.0" layoutX="102.0" layoutY="148.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagenes/lopez.jpeg" />
          </image>

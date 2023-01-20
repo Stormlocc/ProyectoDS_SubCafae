@@ -40,7 +40,7 @@ public class FXMLDocumentAmortizarController implements Initializable {
     @FXML
     private Button bPagar;
     // Instanciar la conexion
-    private Conexion conexion;      //-----------------------------------------------------posible error
+    private Conexion conexion;
     //Coleccion para el combo box
     private ObservableList<Sucursal> listaSucursal;
     private ObservableList<String> listaPrestamo;
@@ -66,6 +66,7 @@ public class FXMLDocumentAmortizarController implements Initializable {
 
     @FXML
     private void ebPagar(MouseEvent event) {
+        
     }
     
 }

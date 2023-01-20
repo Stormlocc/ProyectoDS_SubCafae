@@ -4,21 +4,14 @@
  */
 package subcafae;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+
+
+import static subcafae.FXMLLoginController.prestatario;
 
 /**
  * FXML Controller class
@@ -28,48 +21,37 @@ import javafx.scene.layout.VBox;
 public class FXMLDocumentHomeController implements Initializable {
 
     @FXML
-    private BorderPane borderPanel;
+    private Label mostrarNombre;
     @FXML
-    private Pane headerHome;
+    private Label mostrarApellido;
     @FXML
-    private VBox leftHome;
+    private Label mostrarDNI;
     @FXML
-    private Pane mainHome;
+    private Label mostrarSexo;
     @FXML
-    private ImageView bConfiguracion;
-    @FXML
-    private ImageView bOpciones;
-    @FXML
-    private ImageView bHome;
-    @FXML
-    private ImageView bHistorial;
-    @FXML
-    private ImageView bReporte;
-    @FXML
-    private Label tituloHome;
+    private Label mostrarEstadoCivil;
 
     /**
      * Initializes the controller class.
      */
+    //                      23567522
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("Estas en Home");
         // TODO
+        // Cargar datos necesario en modo public
+        String[] nombres = prestatario.getNombres().split(" ");
+        if(nombres.length == 4)
+            mostrarNombre.setText(nombres[2]+" "+nombres[3]);
+        else
+            mostrarNombre.setText(nombres[2]);
+        mostrarApellido.setText(nombres[0]+" "+nombres[1]);
+        mostrarDNI.setText(prestatario.getDNI());
+        mostrarSexo.setText(prestatario.getSexo());
+        mostrarEstadoCivil.setText(prestatario.getEstadoCivil());
     }   
-
-
-    @FXML
-    private void ebHistorial(MouseEvent event) {
-    }
     
 
-    @FXML
-    private void ebReporte(MouseEvent event) {
 
-    }
-
-    @FXML
-    private void ebHome(MouseEvent event) {
-
-    }
     
 }

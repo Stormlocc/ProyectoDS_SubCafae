@@ -45,6 +45,7 @@ public class FXMLLoginController implements Initializable {
     private ObservableList<Prestatario> listaPrestatario;
     private Conexion conexion;
 
+    static Prestatario prestatario;
     /**
      * Initializes the controller class.
      */
@@ -69,6 +70,9 @@ public class FXMLLoginController implements Initializable {
         if (!listaPrestatario.isEmpty()) {
             // Imprimir el usuario
             System.out.println(listaPrestatario.get(0));
+            // Generar instancia public del usuario
+            prestatario = listaPrestatario.get(0);
+            // Cambiar de ventana
             CargarPagina("vista/FXMLDocumentLayout");
         } else {
             inputDNI.setText("");

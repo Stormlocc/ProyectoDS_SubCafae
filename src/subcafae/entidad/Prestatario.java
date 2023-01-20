@@ -20,42 +20,44 @@ public class Prestatario {
         this.Nombres = nombres;
         this.Sexo = sexo;
         this.EstadoCivil = estadoCivil;
-        this.DNI = DNI;
+        this.DNI = dni;
         this.Password = password;
     }
 
     //
-    public void setIdPrestatario(String idPrestatario) {
-        this.IdPrestatario = idPrestatario;
+
+
+    public String getIdPrestatario() {
+        return this.IdPrestatario;
     }
 
-    public void setNombres(String nombres) {
-        Nombres = nombres;
+    public String getNombres() {
+        return this.Nombres;
     }
 
-    public void setSexo(String sexo) {
-        Sexo = sexo;
+    public String getSexo() {
+        return this.Sexo;
     }
 
-    public void setEstadoCivil(String estadoCivil) {
-        EstadoCivil = estadoCivil;
+    public String getEstadoCivil() {
+        return this.EstadoCivil;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public String getDNI() {
+        return this.DNI;
     }
 
-    public void setPassword(String password) {
-        Password = password;
+    public String getPassword() {
+        return Password;
     }
 
     @Override
     public String toString(){
-        return IdPrestatario + " - " + Nombres + " - " + Sexo +" - " + EstadoCivil + " - " + DNI ;
+        return this.IdPrestatario + " - " + this.Nombres + " - " + this.Sexo +" - " + this.EstadoCivil + " - " + this.DNI ;
     }
 
     // -- Metodos
-
+    //                      23567522
     public static void IniciarSesion(Connection conexion, ObservableList<Prestatario> prestatario, String dni, String pass){
         try {
             Statement sentencia = conexion.createStatement();
@@ -67,7 +69,7 @@ public class Prestatario {
                         resultado.getString("Sexo"),
                         resultado.getString("EstadoCivil"),
                         resultado.getString("DNI"),
-                        resultado.getString("DNI")));
+                        resultado.getString("Password")));
             }
         }
         catch (SQLException e) {
