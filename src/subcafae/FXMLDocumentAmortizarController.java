@@ -17,6 +17,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import subcafae.entidad.Conexion;
+import subcafae.entidad.Sucursal;
 
 /**
  * FXML Controller class
@@ -30,17 +32,18 @@ public class FXMLDocumentAmortizarController implements Initializable {
     @FXML
     private Text inputMeses;
     @FXML
-    private ComboBox<String> bcbxSucursal;
+    private ComboBox<Sucursal> bcbxSucursal;
     @FXML
     private ComboBox<?> bcbxPrestamo;
     @FXML
     private Label labelConfirmar;
     @FXML
     private Button bPagar;
+    // Instanciar la conexion
+    private Conexion conexion;      //-----------------------------------------------------posible error
     //Coleccion para el combo box
-    private ObservableList<String> listaSucursal;
+    private ObservableList<Sucursal> listaSucursal;
     private ObservableList<String> listaPrestamo;
-
 
     /**
      * Initializes the controller class.
@@ -48,8 +51,17 @@ public class FXMLDocumentAmortizarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        listaSucursal = FXCollections.observableArrayList("üno","caramelo", "hermano?","caramelo", "hermano?","caramelo", "hermano?");
+        //Iniciar la conexion
+        conexion = new Conexion();
+        conexion.EstablecerConexion();
+        //Llenar el arreglo
+        listaSucursal = FXCollections.observableArrayList();
+        // Defrente la clase xq ya tiene static
+        Sucursal.LlenarInformacion(conexion.getConnection(), listaSucursal);
+        //Asignar la lista
         bcbxSucursal.setItems(listaSucursal);
+        //Cerrar la conexion
+        //conexion.CerrarConexion();
     }    
 
     @FXML

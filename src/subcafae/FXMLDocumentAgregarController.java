@@ -27,8 +27,6 @@ public class FXMLDocumentAgregarController implements Initializable {
     @FXML
     private TextField inputImporte;
     @FXML
-    private Button bPagar;
-    @FXML
     private Label labelConfirmar;
     @FXML
     private TextField inputMeses;
@@ -36,6 +34,8 @@ public class FXMLDocumentAgregarController implements Initializable {
     private TextField mostrarUsuario;
     @FXML
     private TextField mostrarPrestatario;
+    @FXML
+    private Button bPrestamo;
 
     /**
      * Initializes the controller class.

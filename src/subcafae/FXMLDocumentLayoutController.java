@@ -47,7 +47,7 @@ public class FXMLDocumentLayoutController implements Initializable {
     @FXML
     private ChoiceBox<String> chbOpciones;
 
-    private String[] opciones = {"Obtener prestamo","Agregar pago","Salir"};
+    private String[] opciones = {"Obtener prestamo","Agregar pago","Cambiar contraseña","Salir"};
     /**
      * Initializes the controller class.
      */
@@ -76,8 +76,11 @@ public class FXMLDocumentLayoutController implements Initializable {
 
         }
         if(inputOpcion.equals(opciones[2])){
+            System.out.println("Cambiar contraseña");
+            CargarPagina("vista/FXMLDocumentCambiarPassword");
+        }
+        if(inputOpcion.equals(opciones[3])){
             System.out.println("salio del programa");
-            CargarPagina("vista/FXMLDocumentAgregar");
         }
     }
 

@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import subcafae.entidad.Conexion;
+import subcafae.entidad.Prestatario;
+import subcafae.entidad.Sucursal;
 
 /**
  * FXML Controller class
@@ -37,7 +42,8 @@ public class FXMLLoginController implements Initializable {
     private PasswordField inputPassword;
     @FXML
     private Button bIniciarSesion;
-
+    private ObservableList<Prestatario> listaPrestatario;
+    private Conexion conexion;
 
     /**
      * Initializes the controller class.
@@ -45,15 +51,29 @@ public class FXMLLoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        System.out.println("Login cargado");
+        System.out.println("Estas en Login");
     }
 
     @FXML
     private void ebIniciarSesion(ActionEvent event) throws IOException {
-        System.out.println("Ingreso a Home");
-        //Guardar todos los datos, y verificar si existe el usuario
-        CargarPagina("vista/FXMLDocumentLayout");
-
+        System.out.println("Click en boton iniciar sesion");
+        //Generar conexion
+        conexion = new Conexion();
+        conexion.EstablecerConexion();
+        // Instanciar lista
+        listaPrestatario = FXCollections.observableArrayList();
+        // Obtener usuario  //Verifica  que dni y pass existan sino en dicho modulo mostrara error
+        Prestatario.IniciarSesion(conexion.getConnection(), listaPrestatario, inputDNI.getText(), inputPassword.getText());
+        //                      23567522
+        // Comprueba la exitencia de usuario
+        if (!listaPrestatario.isEmpty()) {
+            // Imprimir el usuario
+            System.out.println(listaPrestatario.get(0));
+            CargarPagina("vista/FXMLDocumentLayout");
+        } else {
+            inputDNI.setText("");
+            inputPassword.setText("");
+        }
     }
 
     private void CargarPagina(String p) {
