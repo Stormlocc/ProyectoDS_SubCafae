@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class Conexion {
     private Connection connection;
-    private final String url = "jdbc:mysql://localhost:3306/ds_subcafae";
-    private final String user = "root";
-    private final String password = "";
+    private String url = "jdbc:mysql://localhost:3306/ds_subcafae";
+    private String user = "root";
+    private String password = "";
 
     public Connection getConnection() {
         return connection;
@@ -41,9 +41,5 @@ public class Conexion {
         catch(Exception e){
             System.out.println(e);
         }
-    }
-
-    public Connection getConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

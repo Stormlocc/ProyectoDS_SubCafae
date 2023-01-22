@@ -34,7 +34,7 @@ public class FXMLDocumentHomeController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    //                      23567522
+    //    //                      23567522
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Estas en Home");
