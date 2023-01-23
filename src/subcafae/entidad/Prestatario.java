@@ -2,10 +2,8 @@ package subcafae.entidad;
 
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 
 public class Prestatario {
     private String IdPrestatario;
@@ -61,9 +59,8 @@ public class Prestatario {
     public static void IniciarSesion(Connection conexion, ObservableList<Prestatario> prestatario, String dni, String pass){
         try {
             Statement sentencia = conexion.createStatement();
-            ResultSet resultado = sentencia.executeQuery("SELECT* FROM prestatario WHERE DNI="+dni+" AND PASSWORD ="+pass);
+            ResultSet resultado = sentencia.executeQuery("SELECT* FROM prestatario WHERE DNI='"+dni+"' AND PASSWORD = '"+pass+"';");
             while (resultado.next()){
-
                 prestatario.add(new Prestatario(resultado.getString("IdPrestatario"),
                         resultado.getString("Nombres"),
                         resultado.getString("Sexo"),
@@ -78,6 +75,30 @@ public class Prestatario {
             System.out.println();
         }
         //
+    }
+    public static void CambiarPassword(Connection conexion, Prestatario user, String inputPassword, String newPassword){
+        System.out.println(user);   //  45731551
+        try{
+            if(user.getPassword().equals(inputPassword)){
+                System.out.println("Contrase;as coinciden");
+                //Inyectar codigo
+                PreparedStatement pst = conexion.prepareStatement("UPDATE prestatario SET prestatario.password = ? WHERE DNI = ? AND IdPrestatario = ?");
+                pst.setString(1, newPassword);
+                pst.setString(2, user.getDNI());
+                pst.setString(3, user.getIdPrestatario());
+                pst.executeUpdate();
+                pst.close();
+                System.out.println("Cambio de contraseña exitoso");
+            }
+            else{
+                System.out.println("Contrasenas NO NO coinciden");
+            }
+        }
+        catch (Exception e){
+            System.out.println("Datos incorrectos para cambiar contraseña");
+            System.out.println(e);
+            System.out.println();
+        }
 
     }
 }

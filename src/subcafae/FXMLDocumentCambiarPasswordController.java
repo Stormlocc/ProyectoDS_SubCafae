@@ -9,10 +9,12 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import subcafae.entidad.Conexion;
+import subcafae.entidad.Prestatario;
 
+import static subcafae.FXMLLoginController.prestatario;
 /**
  * FXML Controller class
  *
@@ -25,9 +27,9 @@ public class FXMLDocumentCambiarPasswordController implements Initializable {
     @FXML
     private TextField inputNewPassword;
     @FXML
-    private Label labelConfirmar;
-    @FXML
     private Button bCambiarPassword;
+    // Instanciar la conexion
+    private Conexion conexion;
 
     /**
      * Initializes the controller class.
@@ -38,7 +40,18 @@ public class FXMLDocumentCambiarPasswordController implements Initializable {
     }    
 
     @FXML
-    private void ebPagar(MouseEvent event) {
+    private void ebCambiarPassword(MouseEvent event) {
+        if(inputPassword.getText().isEmpty() || inputNewPassword.getText().isEmpty()){
+            System.out.println("Datos incompletos para cambiar el password");
+        }
+        else{
+            conexion = new Conexion();
+            conexion.EstablecerConexion();
+            Prestatario.CambiarPassword(conexion.getConnection(),prestatario ,inputPassword.getText(),inputNewPassword.getText());
+        }
+        //borrar los cambos
+        inputPassword.setText("");
+        inputNewPassword.setText("");
     }
     
 }

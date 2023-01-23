@@ -5,6 +5,9 @@
         <group>
             <file>file:/E:/Codigos/ProyectoDS_SubCafae/src/subcafae/FXMLDocumentAmortizarController.java</file>
             <file>file:/E:/Codigos/ProyectoDS_SubCafae/src/subcafae/entidad/Prestamo.java</file>
+            <file>file:/E:/Codigos/ProyectoDS_SubCafae/src/subcafae/FXMLDocumentReporteController.java</file>
+            <file>file:/E:/Codigos/ProyectoDS_SubCafae/src/subcafae/FXMLDocumentLayoutController.java</file>
+            <file>file:/E:/Codigos/ProyectoDS_SubCafae/src/subcafae/FXMLDocumentCambiarPasswordController.java</file>
             <file>file:/E:/Codigos/ProyectoDS_SubCafae/src/subcafae/entidad/Amortizacion.java</file>
         </group>
     </open-files>

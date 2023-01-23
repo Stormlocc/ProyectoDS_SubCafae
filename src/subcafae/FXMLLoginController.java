@@ -75,8 +75,10 @@ public class FXMLLoginController implements Initializable {
             // Cambiar de ventana
             CargarPagina("vista/FXMLDocumentLayout");
         } else {
+            //Mostrar error de inicio de sesion
             inputDNI.setText("");
             inputPassword.setText("");
+            System.out.println("Datos incorrectos, vuelva a intentar");
         }
     }
 

@@ -20,7 +20,6 @@ import subcafae.entidad.Prestamista;
 import subcafae.entidad.Prestamo;
 
 import static subcafae.FXMLLoginController.prestatario;
-import static subcafae.entidad.Prestamista.ObtenerPrestamista;
 
 /**
  * FXML Controller class

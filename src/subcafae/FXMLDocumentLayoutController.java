@@ -77,6 +77,8 @@ public class FXMLDocumentLayoutController implements Initializable {
             CargarPagina("vista/FXMLDocumentCambiarPassword");
         }
         if(inputOpcion.equals(opciones[3])){
+            // Salir del programa y alertas
+            //https://www.youtube.com/watch?v=exIQqcQ0lzI
             System.out.println("salio del programa");
         }
     }
