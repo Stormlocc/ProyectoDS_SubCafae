@@ -63,10 +63,8 @@ public class FXMLLoginController implements Initializable {
         conexion.EstablecerConexion();
         // Instanciar lista
         listaPrestatario = FXCollections.observableArrayList();
-        // Obtener usuario  //Verifica  que dni y pass existan sino en dicho modulo mostrara error
         Prestatario.IniciarSesion(conexion.getConnection(), listaPrestatario, inputDNI.getText(), inputPassword.getText());
-        //                      23567522
-        // Comprueba la exitencia de usuario
+        // Obtener usuario  //Verificar la existencia
         if (!listaPrestatario.isEmpty()) {
             // Imprimir el usuario
             System.out.println(listaPrestatario.get(0));

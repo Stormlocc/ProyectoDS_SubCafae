@@ -12,12 +12,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
 /**
@@ -48,6 +51,8 @@ public class FXMLDocumentLayoutController implements Initializable {
     @FXML
     private ChoiceBox<String> chbOpciones;
 
+
+    Stage stage;
     private String[] opciones = {"Obtener prestamo","Agregar pago","Cambiar contraseña","Salir"};
     /**
      * Initializes the controller class.
@@ -77,10 +82,21 @@ public class FXMLDocumentLayoutController implements Initializable {
             CargarPagina("vista/FXMLDocumentCambiarPassword");
         }
         if(inputOpcion.equals(opciones[3])){
-            // Salir del programa y alertas
-            //https://www.youtube.com/watch?v=exIQqcQ0lzI
-            System.out.println("salio del programa");
+            //Crear aletar
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Cerrar sesion de reportes SubCafae");
+            alert.setHeaderText("Seguro desea cerrar sesion?");
+            alert.setContentText("Estas apunto de cerrar sesion.");
+
+            if(alert.showAndWait().get() == ButtonType.OK){
+                //Scena actual en la que estamos
+                stage = (Stage)  borderPanel.getScene().getWindow();
+                System.out.println("salio del programa");
+                stage.close();
+            }
         }
+        //Desmarcar opcion
+        chbOpciones.setValue("");
     }
 
     @FXML

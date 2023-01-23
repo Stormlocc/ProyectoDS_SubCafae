@@ -29,6 +29,7 @@ public class FXMLDocumentReporteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         //cssPrueba.setText("Here is my updated text.");
+        // BARRA DE PROGRESO        https://www.youtube.com/watch?v=nEKQjAP0lrQ
     }    
     
 }
