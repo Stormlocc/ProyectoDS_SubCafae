@@ -49,9 +49,5 @@ public class FXMLDocumentHomeController implements Initializable {
         mostrarDNI.setText(prestatario.getDNI());
         mostrarSexo.setText(prestatario.getSexo());
         mostrarEstadoCivil.setText(prestatario.getEstadoCivil());
-    }   
-    
-
-
-    
+    }
 }

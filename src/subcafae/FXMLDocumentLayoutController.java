@@ -2,6 +2,7 @@ package subcafae;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -66,17 +67,13 @@ public class FXMLDocumentLayoutController implements Initializable {
         String inputOpcion = chbOpciones.getValue();
         System.out.println(inputOpcion);
         if (inputOpcion=="Obtener prestamo" ){
-            System.out.println("Ingreso a obtener prestamo");
             CargarPagina("vista/FXMLDocumentAgregar");
-            System.out.println("Ingreso a obtener prestamo");
         }
         if(inputOpcion.equals(opciones[1]) ){
-            System.out.println("Ingreso a Agregar pagoo");
             CargarPagina("vista/FXMLDocumentAmortizar");
 
         }
         if(inputOpcion.equals(opciones[2])){
-            System.out.println("Cambiar contraseña");
             CargarPagina("vista/FXMLDocumentCambiarPassword");
         }
         if(inputOpcion.equals(opciones[3])){

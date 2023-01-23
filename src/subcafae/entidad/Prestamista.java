@@ -1,23 +1,17 @@
 package subcafae.entidad;
 
-import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Prestamista {
     private Integer IdPrestamista;
     private String Nombres;
     private String Email;
 
-
-    //static List<Prestamista> listaPrestamista = new ArrayList<>();
 
     public Prestamista(Integer idPrestamista, String nombres, String email) {
         IdPrestamista = idPrestamista;
@@ -33,10 +27,6 @@ public class Prestamista {
         return Nombres;
     }
 
-    public String getEmail() {
-        return Email;
-    }
-
 
     public String toString(){
         return IdPrestamista + " " +Nombres + " " +Email;
@@ -45,7 +35,7 @@ public class Prestamista {
     //Obtener prestamista
     public static Prestamista ObtenerPrestamista(Connection conexion ){
         try{
-            ObservableList<Prestamista> listaPrestamista = FXCollections.observableArrayList();;
+            ObservableList<Prestamista> listaPrestamista = FXCollections.observableArrayList();
             Statement sentencia = conexion.createStatement();
             ResultSet resultado = sentencia.executeQuery("SELECT * FROM prestamista");
             //Conseguir todos los prestamistas
@@ -59,8 +49,6 @@ public class Prestamista {
             /**/
             //Prestamista aleatorio
             int numero = (int) (Math.random() * listaPrestamista.size());
-            System.out.println("Aleatorio " +  numero);
-            System.out.println(listaPrestamista.get(numero));
             return listaPrestamista.get(numero);
         }
         catch (Exception e){
