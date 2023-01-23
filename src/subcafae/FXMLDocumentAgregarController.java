@@ -59,12 +59,12 @@ public class FXMLDocumentAgregarController implements Initializable {
 
         inputImporte.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.matches("\\d*")) return;
-            inputImporte.setText(newValue.replaceAll("[^\\d]", ""));
+            inputImporte.setText(newValue.replaceAll("\\D", ""));
         });
 
         inputMeses.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.matches("\\d*")) return;
-            inputMeses.setText(newValue.replaceAll("[^\\d]", ""));
+            inputMeses.setText(newValue.replaceAll("\\D", ""));
         });
 
         //
@@ -101,10 +101,9 @@ public class FXMLDocumentAgregarController implements Initializable {
             Prestamo.GenerarPrestamo(conexion.getConnection(),FechaPrestamo,Importe,Meses,IdPrestatario,IdPrestamista);
             //Mostrar bandera de prestamos
             banderaPrestamo.setText("! Prestamo Exitoso !!");
-            //Limpiar pantalla
-            inputImporte.setText("");
-            inputMeses.setText("");
         }
-        //Prestamo.GenerarPrestamo(conexion.getConexion());
+        //Limpiar pantalla
+        inputImporte.setText("");
+        inputMeses.setText("");
     }
 }

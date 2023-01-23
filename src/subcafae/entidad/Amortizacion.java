@@ -1,6 +1,11 @@
 
 package subcafae.entidad;
 
+import jdk.nashorn.internal.runtime.regexp.joni.exception.SyntaxException;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 /**
  *
  * @author antho
@@ -64,5 +69,28 @@ public class Amortizacion {
         this.idPrestamo = idPrestamo;
     }
     //Metodos
+    public static void Pagar(Connection conexion, String FechaPrestamo, String Importe, String IdSucursal, String IdPrestamo){
+        //System.out.println(Fecha + Importe + IdSucursal + IdPrestamo+ "<-");
+        try{
+            //Permite agregar codigo sql, (inyectar codigo)
+            PreparedStatement pst = conexion.prepareStatement("INSERT INTO amortizacion VALUES (?,?,?,?,?)");
+            //Autoincremente
+            pst.setString(1, null);
+            //Detectar que prestamo pagara, (dar aviso si el prestamo ya esta pagado
+            pst.setString(2, FechaPrestamo.trim());
+            pst.setString(3, Importe.trim());
+            pst.setString(4, IdSucursal.trim());
+            pst.setString(5, IdPrestamo.trim());
+            //Ejecutar codigo
+            pst.executeUpdate();
+            System.out.println("Pago de amortizacion exitoso");
+            //Cerrar estamento
+            pst.close();
+        }
+        catch (Exception e){
+            System.out.println("No se pudo pagar");
+            System.out.println(e);
+        }
+    }
 
 }
