@@ -1,18 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package subcafae;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import subcafae.entidad.*;
+
+import static subcafae.FXMLLoginController.prestatario;
+
 
 /**
  * FXML Controller class
@@ -22,36 +23,50 @@ import javafx.scene.layout.VBox;
 public class FXMLDocumentHistorialController implements Initializable {
 
     @FXML
-    private ImageView ebHome;
+    private TableView<Historial> tbvHistorial;
     @FXML
-    private ImageView ebHome1;
+    private TableColumn<Historial, String> columSucursal;
     @FXML
-    private BorderPane borderPanel;
+    private TableColumn<Historial, Float> columMonto;
     @FXML
-    private Pane headerHome;
+    private TableColumn<Historial, Float> columSaldo;
     @FXML
-    private VBox leftHome;
-    @FXML
-    private Pane mainHome;
+    private TableColumn<Historial, String> columFecha;
+    
+    //Colecciones
+    private ObservableList<Historial> listaTablaHistorial;
+    private Conexion conexion;
+
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //tbvHistorial.setSelectionModel(null);
         // TODO
+        conexion = new Conexion();
+        conexion.EstablecerConexion();
+        //
+        // Generar la tabla de historial
+        listaTablaHistorial = FXCollections.observableArrayList();
+        Historial.GenerarHistorial(conexion.getConnection(), listaTablaHistorial, prestatario);
+        // Enlazar tableview con la coleccion
+        tbvHistorial.setItems(listaTablaHistorial);
+        // Setera columnas
+        columFecha.setCellValueFactory(new PropertyValueFactory<Historial,String>("fecha"));
+        columSucursal.setCellValueFactory(new PropertyValueFactory<Historial,String>("sucural"));
+        columMonto.setCellValueFactory(new PropertyValueFactory<Historial,Float>("monto"));
+        //Calcular el saldo, sino cmaibar nombre a la columna
+        columSaldo.setCellValueFactory(new PropertyValueFactory<Historial,Float>("saldo"));
     }    
 
-    @FXML
-    private void initialize(MouseEvent event) {
-    }
-
-    @FXML
+//76894310
     private void ebHistorial(MouseEvent event) {
         System.out.println("Moviendo a pestaña historial");
     }
 
-    @FXML
     private void ebReporte(MouseEvent event) {
         System.out.println("Moviendo a pestaña reporte");
     }
