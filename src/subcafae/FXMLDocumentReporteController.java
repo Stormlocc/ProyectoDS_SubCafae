@@ -72,11 +72,11 @@ public class FXMLDocumentReporteController implements Initializable {
             mesesTotal += listaPrestamo.get(i).getMeses();
             mesesPagados += 1;
         }
-        String pag= String.valueOf((totalPrestamo- totalPagado) / (mesesTotal-mesesPagados) )  ;
+        String pag= String.valueOf(Math.round((totalPrestamo- totalPagado) / (mesesTotal-mesesPagados)) /1.0)  ;
         pagoMensual.setText("S/. "+pag);
         String mes= String.valueOf(mesesTotal-mesesPagados);
         mesesRestantes.setText(mes);
-        saldo.setText("S/. "+String.valueOf(totalPrestamo- totalPagado));
+        saldo.setText("S/. "+String.valueOf(Math.round(totalPrestamo- totalPagado)/1.0));
         bProgreso.setProgress(totalPagado/totalPrestamo);
         portentaje.setText(totalPagado/totalPrestamo*100 + " %");
     }
@@ -96,4 +96,5 @@ public class FXMLDocumentReporteController implements Initializable {
     }
 
 }
-//23567522
+//22322556
+

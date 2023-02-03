@@ -13,7 +13,7 @@
 
 <BorderPane fx:id="borderPanel" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentLayoutController">
    <left>
-      <VBox fx:id="leftHome" prefWidth="50.0" style="-fx-background-color: #E77918;" stylesheets="@boton.css" BorderPane.alignment="CENTER">
+      <VBox fx:id="leftHome" prefWidth="50.0" style="-fx-background-color: #E77918;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="bHome" fitHeight="30.0" fitWidth="44.0" onMouseClicked="#ebHome" opacity="0.74" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
