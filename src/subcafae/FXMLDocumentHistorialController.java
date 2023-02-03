@@ -57,7 +57,8 @@ public class FXMLDocumentHistorialController implements Initializable {
         // Setera columnas
         columFecha.setCellValueFactory(new PropertyValueFactory<Historial,String>("fecha"));
             //Ordenar la tabla
-        tbvHistorial.getSortOrder().add(columFecha);
+        columFecha.setSortType(TableColumn.SortType.DESCENDING);
+        
         columSucursal.setCellValueFactory(new PropertyValueFactory<Historial,String>("sucural"));
         columMonto.setCellValueFactory(new PropertyValueFactory<Historial,Float>("monto"));
         //Calcular el saldo, sino cmaibar nombre a la columna

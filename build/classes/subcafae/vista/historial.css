@@ -1,0 +1,31 @@
+.table-view .column-header-background .label {
+ -fx-font-size: 9pt;
+}
+
+.table-column {
+  -fx-alignment: CENTER;
+}
+
+.table-row-cell {
+  -fx-background-color: #FBFBFB;
+  -fx-cell-size: 50px;
+
+  /** Nothing else done here */
+}
+
+.table-row-cell:filled:selected {
+  -fx-background: -fx-control-inner-background ;
+  -fx-background-color: -fx-table-cell-border-color, -fx-background,   #cccccc;
+  -fx-text-fill:  #FFFFFF;
+  -fx-background-insets: 0, 0 0 1 0 ;
+  -fx-table-cell-border-color: derive(-fx-color, 10%);
+
+}
+.table-row-cell:odd:filled:selected {
+  -fx-background: -fx-control-inner-background-alt ;
+}
+
+
+.table-row-cell:hover {
+    -fx-background-color: #ffa41a;
+}
