@@ -34,6 +34,14 @@ public class Prestamo {
         return IdPrestamo;
     }
 
+    public Integer getImporte() {
+        return Importe;
+    }
+
+    public Integer getMeses() {
+        return Meses;
+    }
+
     @Override
     public String toString(){
 

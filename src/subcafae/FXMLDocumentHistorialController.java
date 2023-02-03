@@ -56,13 +56,16 @@ public class FXMLDocumentHistorialController implements Initializable {
         tbvHistorial.setItems(listaTablaHistorial);
         // Setera columnas
         columFecha.setCellValueFactory(new PropertyValueFactory<Historial,String>("fecha"));
+            //Ordenar la tabla
+        tbvHistorial.getSortOrder().add(columFecha);
         columSucursal.setCellValueFactory(new PropertyValueFactory<Historial,String>("sucural"));
         columMonto.setCellValueFactory(new PropertyValueFactory<Historial,Float>("monto"));
         //Calcular el saldo, sino cmaibar nombre a la columna
         columSaldo.setCellValueFactory(new PropertyValueFactory<Historial,Float>("saldo"));
-    }    
+        tbvHistorial.sort();
+    }
 
-//76894310
+
     private void ebHistorial(MouseEvent event) {
         System.out.println("Moviendo a pestaña historial");
     }

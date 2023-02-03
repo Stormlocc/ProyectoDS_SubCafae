@@ -26,7 +26,6 @@
 }
 
 
-//Style of each entire row in the table view when is hovered
 .table-row-cell:hover {
     -fx-background-color: #ffa41a;
 }

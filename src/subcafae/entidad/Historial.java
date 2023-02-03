@@ -21,9 +21,6 @@ public class Historial {
         this.saldo = saldo;
     }
 
-
-
-
     public String getFecha() {
         return fecha;
     }

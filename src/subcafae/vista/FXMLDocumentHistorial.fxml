@@ -16,10 +16,10 @@
       </Label>
       <TableView fx:id="tbvHistorial" layoutX="60.0" layoutY="125.0" prefHeight="385.0" prefWidth="830.0" snapToPixel="false" style="-fx-background-color: rgba(252, 253, 252, 0.74);" stylesheets="@historial.css">
         <columns>
-          <TableColumn fx:id="columFecha" prefWidth="150.0" text="Detalle de pago" />
-          <TableColumn fx:id="columSucursal" prefWidth="264.0" text="Modalidad de pago" />
-            <TableColumn fx:id="columMonto" prefWidth="195.0" text="Monto" />
-            <TableColumn fx:id="columSaldo" prefWidth="226.0" text="Saldo" />
+          <TableColumn fx:id="columFecha" prefWidth="150.0" text="Codigo de pago" />
+          <TableColumn fx:id="columSucursal" prefWidth="264.0" text="Sucursal de pago" />
+            <TableColumn fx:id="columMonto" prefWidth="195.0" text="Amortizacion" />
+            <TableColumn fx:id="columSaldo" prefWidth="226.0" text="Prestamo" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -1,50 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.AreaChart?>
+<?import java.net.URL?>
 <?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPanel" prefHeight="570.0" prefWidth="950.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentReporteController">
+<AnchorPane id="AnchorPane" fx:id="anchorPanel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="570.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcafae.FXMLDocumentReporteController">
    <children>
-      <AreaChart layoutX="72.0" layoutY="145.0" prefHeight="380.0" prefWidth="463.0">
+      <LineChart fx:id="lnchart" layoutX="61.0" layoutY="147.0" prefHeight="387.0" prefWidth="501.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="388.0" AnchorPane.topAnchor="147.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
           <NumberAxis side="LEFT" />
         </yAxis>
-      </AreaChart>
-      <Pane layoutX="61.0" layoutY="36.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #E77918;" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="689.0" AnchorPane.topAnchor="36.0">
+      </LineChart>
+      <VBox layoutX="631.0" layoutY="184.0" prefHeight="320.0" prefWidth="241.0" AnchorPane.bottomAnchor="66.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="184.0">
          <children>
-            <Label layoutX="27.0" layoutY="9.0" text="Siguiente pago" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <PieChart layoutX="586.0" layoutY="147.0" prefHeight="364.0" prefWidth="308.0" style="-fx-background-color: #EEEEEE;" />
-      <Pane layoutX="386.0" layoutY="36.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #E77918;" AnchorPane.leftAnchor="386.0" AnchorPane.rightAnchor="364.0" AnchorPane.topAnchor="36.0">
-         <children>
-            <Label layoutX="27.0" layoutY="9.0" prefHeight="32.0" prefWidth="147.0" text="Saldo restante" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
+            <Pane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #E77918;">
+               <children>
+                  <Label layoutX="27.0" layoutY="9.0" text="Meses restantes" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="mesesRestantes" layoutX="47.0" layoutY="9.0" prefHeight="32.0" prefWidth="147.0" text="00">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="241.0" style="-fx-background-color: #E77918;">
+               <children>
+                  <Label layoutX="27.0" layoutY="9.0" text="Saldo restante" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="241.0">
+               <children>
+                  <Label fx:id="saldo" layoutX="47.0" layoutY="9.0" prefHeight="32.0" prefWidth="147.0" text="00">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #E77918;">
+               <children>
+                  <Label layoutX="31.0" layoutY="9.0" prefHeight="32.0" prefWidth="167.0" text="Siguiente cuota" textFill="#eeeeee">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="pagoMensual" layoutX="47.0" layoutY="9.0" prefHeight="32.0" prefWidth="147.0" text="00">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
-      </Pane>
-      <Pane layoutX="684.0" layoutY="36.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #E77918;" AnchorPane.topAnchor="36.0">
-         <children>
-            <Label layoutX="31.0" layoutY="9.0" prefHeight="32.0" prefWidth="139.0" text="Total pagado" textFill="#eeeeee">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
+      </VBox>
+      <ProgressBar fx:id="bProgreso" layoutX="108.0" layoutY="44.0" prefHeight="59.0" prefWidth="736.0" progress="0.0" stylesheets="@reporte.css" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="44.0" />
+      <Label fx:id="portentaje" alignment="CENTER" contentDisplay="CENTER" layoutX="377.0" layoutY="54.0" prefHeight="40.0" prefWidth="199.0" text="50%" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
    </children>
+   <stylesheets>
+      <URL value="@estilos.css" />
+      <URL value="@reporte.css" />
+   </stylesheets>
 </AnchorPane>

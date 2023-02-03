@@ -45,7 +45,7 @@ public class FXMLLoginController implements Initializable {
     private ObservableList<Prestatario> listaPrestatario;
     private Conexion conexion;
 
-    static Prestatario prestatario;
+    public static Prestatario prestatario;
     /**
      * Initializes the controller class.
      */
